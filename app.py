@@ -34,8 +34,8 @@ img_file_buffer = st.file_uploader("📂 Cargar una imagen", type=["png", "jpg",
 if img_file_buffer:
     img = Image.open(img_file_buffer)
     img_cv = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
-    st.image(img, caption="📸 Imagen Cargada", use_column_width=True)
-    
+    st.image(img, caption="📸 Imagen Cargada", use_container_width=True)
+
     # Extraer texto con OCR
     text = pytesseract.image_to_string(img_cv)
     st.subheader("📄 Texto Extraído:")
